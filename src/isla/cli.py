@@ -65,6 +65,7 @@ DATA_FORMAT_ERROR = 65
 
 
 def main(*args: str, stdout=sys.stdout, stderr=sys.stderr):
+    sys.setrecursionlimit(3000) #default 1000
     if "-O" in sys.argv:
         sys.argv.remove("-O")
         os.execl(sys.executable, sys.executable, "-O", *sys.argv)
